@@ -1,18 +1,20 @@
 package gensnake.app;
 
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
-
 import gensnake.disp.Painter;
 
 
 public class App implements Runnable {
-
-	public static final int WINDOW_WIDTH = 1300, WINDOW_HEIGHT = 700, FRAME_SIZE = 180, TILE_SIZE = 4;
-	public static final int POOL_SIZE = FRAME_SIZE / TILE_SIZE, POOLS_ACROSS = 7, POOLS_DOWN = 3;
 	
-	//public static final int WINDOW_WIDTH = 502, WINDOW_HEIGHT = 525, FRAME_SIZE = 240, TILE_SIZE = 6;
-	//public static final int POOL_SIZE = FRAME_SIZE / TILE_SIZE, POOLS_ACROSS = 2, POOLS_DOWN = 2;
+	/*public static final int WINDOW_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
+	public static final int WINDOW_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
+	public static final int POOL_SIZE = 52, TILE_SIZE = 2, FRAME_SIZE = POOL_SIZE * TILE_SIZE;
+	public static final int POOLS_ACROSS = WINDOW_WIDTH / FRAME_SIZE, POOLS_DOWN = WINDOW_HEIGHT / FRAME_SIZE;*/
+	
+	//public static final int WINDOW_WIDTH = 1300, WINDOW_HEIGHT = 700, FRAME_SIZE = 180, TILE_SIZE = 4;
+	//public static final int POOL_SIZE = FRAME_SIZE / TILE_SIZE, POOLS_ACROSS = 7, POOLS_DOWN = 3;
+	
+	public static final int WINDOW_WIDTH = 502, WINDOW_HEIGHT = 525, FRAME_SIZE = 240, TILE_SIZE = 6;
+	public static final int POOL_SIZE = FRAME_SIZE / TILE_SIZE, POOLS_ACROSS = 2, POOLS_DOWN = 2;
 	
 	private boolean isRunning = false;
 	private Thread thread;
@@ -26,7 +28,9 @@ public class App implements Runnable {
 	public App() {
 		pool = new GenePool();
 		painter = new Painter( pool );
+		
 		new Window( WINDOW_WIDTH, WINDOW_HEIGHT, "Snake AI", painter );
+		//new Window( "Snake AI", painter );
 		
 		start();
 	}

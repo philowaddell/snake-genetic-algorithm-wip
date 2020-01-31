@@ -4,10 +4,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import gensnake.instance.Agent;
-import gensnake.instance.Apple;
 import gensnake.instance.Instance;
-import gensnake.instance.Snake;
 
 public class GenePool {
 	

@@ -31,17 +31,10 @@ public class Painter extends Canvas {
 		
 		g.setColor( Color.BLACK );
 		g.fillRect( 0, 0, App.WINDOW_WIDTH, App.WINDOW_HEIGHT);
-
-		/*g.setColor( Color.GREEN );
-		g.fillRect(0, 0, App.FRAME_SIZE, App.TILE_SIZE);
-		g.fillRect(0, 0, App.TILE_SIZE, App.FRAME_SIZE);
-		g.fillRect(App.FRAME_SIZE - App.TILE_SIZE, 0, App.TILE_SIZE, App.FRAME_SIZE);
-		g.fillRect(0, App.FRAME_SIZE - App.TILE_SIZE, App.FRAME_SIZE, App.TILE_SIZE);*/
 		
 		pool.render( g );
 		
 		bs.show();
-		
 	}
 
 }

@@ -18,7 +18,7 @@ public class Instance extends InstanceObject {
 		Point snakePos = new Point( origin.x + App.POOL_SIZE / 2, origin.y + App.POOL_SIZE / 2 );
 		snake = new Snake( snakePos, origin, App.POOL_SIZE );
 		apple = new Apple( origin );
-		agent = new Agent( snake, apple );
+		agent = new QL_Agent( snake, apple );
 	}
 
 	@Override

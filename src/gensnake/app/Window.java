@@ -17,7 +17,19 @@ public class Window {
 		frame.setPreferredSize( new Dimension( width, height ) );
 		frame.setMaximumSize( new Dimension( width, height ) );
 		frame.setMinimumSize( new Dimension( width, height ) );
+
+		frame.add( painter );
+		frame.setResizable( false );
+		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+		frame.setLocationRelativeTo( null );
+		frame.setVisible( true );
+	}
+	
+	public Window( String title, Painter painter ) {
 		
+		JFrame frame = new JFrame( title );
+		
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		frame.add( painter );
 		frame.setResizable( false );
 		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );

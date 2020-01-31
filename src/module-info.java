@@ -1,4 +1,4 @@
-module Genetic_Snake {
+/*module Genetic_Snake {
 	
 	requires transitive java.desktop;
-}
+}*/

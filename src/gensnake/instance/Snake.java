@@ -14,7 +14,6 @@ public class Snake extends InstanceObject {
 	
 	private ArrayList<BodyPart> body;
 	private int size;
-	private int deaths = 0;
 	private final Point origin;
 	private final int POOL_SIZE;
 	
