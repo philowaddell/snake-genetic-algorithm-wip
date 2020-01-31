@@ -42,4 +42,10 @@ public class CS_Agent extends Agent {
 		}
 	}
 
+	@Override
+	public void reward() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

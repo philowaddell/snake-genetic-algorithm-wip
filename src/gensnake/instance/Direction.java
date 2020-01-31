@@ -6,13 +6,9 @@ import java.util.HashMap;
 public enum Direction {
 	
 	NORTH(0),
-	NORTH_EAST(1),
-	EAST(2),
-	SOUTH_EAST(3),
-	SOUTH(4),
-	SOUTH_WEST(5),
-	WEST(6),
-	NORTH_WEST(7);
+	EAST(1),
+	SOUTH(2),
+	WEST(3);
 
     private int value;
     private static HashMap<Object, Object> map = new HashMap<>();
@@ -37,19 +33,19 @@ public enum Direction {
     
     public Direction left() {
     	if( this.ordinal() == 0 ) {
-    		return values()[6];
+    		return values()[3];
     	}
     	else {
-    		return values()[ordinal() - 2];
+    		return values()[ordinal() - 1];
     	}
     }
     
     public Direction right() {
-    	if( this.ordinal() == 6 ) {
+    	if( this.ordinal() == 3 ) {
     		return values()[0];
     	}
     	else {
-    		return values()[ordinal() + 2];
+    		return values()[ordinal() + 1];
     	}
     }
     
@@ -58,13 +54,13 @@ public enum Direction {
     		case 0:
     			p.y--;
     			break;
-    		case 2:
+    		case 1:
     			p.x++;
     			break;
-    		case 4:
+    		case 2:
     			p.y++;
     			break;
-    		case 6:
+    		case 3:
     			p.x--;
     			break;
 			default: 

@@ -29,9 +29,6 @@ public class Painter extends Canvas {
 		
 		Graphics g = bs.getDrawGraphics();
 		
-		g.setColor( Color.BLACK );
-		g.fillRect( 0, 0, App.WINDOW_WIDTH, App.WINDOW_HEIGHT);
-		
 		pool.render( g );
 		
 		bs.show();

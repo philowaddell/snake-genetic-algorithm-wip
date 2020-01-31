@@ -15,20 +15,18 @@ public class Snake extends InstanceObject {
 	private ArrayList<BodyPart> body;
 	private int size;
 	private final Point origin;
-	private final int POOL_SIZE;
 	
 	private Direction direction;
 	
 	private Random r;
 
-	public Snake(Point p, Point origin, int POOL_SIZE) {
+	public Snake(Point p, Point origin ) {
 		super(p);
 		this.origin = origin;
-		this.POOL_SIZE = POOL_SIZE;
 		
 		r = new Random();
 		
-		direction = Direction.valueOf(r.nextInt(3) * 2);
+		direction = Direction.valueOf(r.nextInt(4));
 		size = 5;
 		body = new ArrayList<BodyPart>();
 	}
@@ -43,11 +41,6 @@ public class Snake extends InstanceObject {
 		if( body.size() != size ) {
 			body.add( new BodyPart( new Point( direction.step( p ) ) ) );
 		}	
-		
-		if( isDead() ) {
-			reset();
-		}
-		
 	}
 	
 	@Override
@@ -70,7 +63,7 @@ public class Snake extends InstanceObject {
 	
 	public boolean isDead() {
 		
-		if( p.x < origin.x + 1 || p.x > origin.x + POOL_SIZE - 1 ||  p.y < origin.y + 1 || p.y > origin.y + POOL_SIZE - 1 ) {
+		if( p.x < origin.x + 1 || p.x > origin.x + App.POOL_SIZE - 1 ||  p.y < origin.y + 1 || p.y > origin.y + App.POOL_SIZE - 1 ) {
 			return true;
 		}
 		
@@ -92,6 +85,10 @@ public class Snake extends InstanceObject {
 
 	public void grow() {
 		size++;
+	}
+
+	public ArrayList<BodyPart> getBody() {
+		return body;
 	}
 
 }

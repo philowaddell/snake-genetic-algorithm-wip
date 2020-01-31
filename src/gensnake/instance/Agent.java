@@ -11,5 +11,7 @@ public abstract class Agent {
 	}
 	
 	public abstract void tick();
+
+	public abstract void reward();
 	
 }
